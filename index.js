@@ -6,6 +6,8 @@ let fetchcmd = async (message, args, client, _, __) => {
 
   let res = await fetch(url);
   let data = await res.text()
+
+  if (data.length === 0) return message.reply(`\`Couldn't fetch ${url}\``);
   message.reply(`\`\`\`${data}\`\`\``);
 }
 
