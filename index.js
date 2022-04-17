@@ -8,6 +8,7 @@ let fetchcmd = async (message, args, client, _, __) => {
   let data = await res.text()
 
   if (data.length === 0) return message.reply(`\`Couldn't fetch ${url}\``);
+  if (data.length > 4000) return message.reply(`\`\`\`${data.slice(0, 3996).concat('...')}\`\`\``):
   message.reply(`\`\`\`${data}\`\`\``);
 }
 
